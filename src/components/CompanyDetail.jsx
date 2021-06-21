@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 class CompanyDetail extends Component {
   state = {
-    company: null,
+    jobSelected: null,
   };
 
   componentDidUpdate(prevProps) {

@@ -40,6 +40,7 @@ class JobList extends Component {
 
   changeJob = (job) => {
     this.setState({ jobSelected: job })
+    this.props.jobSelected(job)
     this.props.history.push("/company-detail")
   };
 

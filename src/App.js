@@ -12,11 +12,13 @@ class App extends Component {
     company: "",
     queryTitle: "",
     queryCompany: "",
-    searchButtonClicked: false
+    searchButtonClicked: false,
+    jobSelected: null
   }
   seachQueryTitle = (e) => this.setState({ queryTitle: e.target.value });
   seachQueryCompany = (e) => this.setState({ queryCompany: e.target.value });
   searchButton = () => this.setState({ searchButtonClicked: true });
+  jobSelected = (jobSelected) => this.setState({ jobSelected });
   render() {
     return (
       <Router>
@@ -63,7 +65,7 @@ class App extends Component {
           {this.state.queryTitle.length >= 3 && this.state.searchButtonClicked &&
             <Route path="/" exact render={(routerProps) => (<JobsList {...routerProps} queryTitle={this.state.queryTitle} queryCompany={this.state.queryCompany}/>)} />
           }
-          <Route path="/company-detail" exact render={(routerProps) => (<CompanyDetail {...routerProps} company={this.state.company} />)} />
+          <Route path="/company-detail" exact render={(routerProps) => (<CompanyDetail {...routerProps} jobSelected={this.jobSelected} />)} />
         </Container>
       </Router>
     );
