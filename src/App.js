@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Component } from 'react';
+import { Link } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Col, Container, Row } from 'react-bootstrap'
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Container>
+          <Row>
+            <Col sm={12} className="text-center background-div">
+              <Link to="/">
+                <h1>Jobs Search Engine</h1>
+              </Link>
+            </Col>
+          </Row>
+          <hr />
+          {/* <Route path="/" exact render={(routerProps) => <BookStore {...routerProps} addToCart={this.addToCart} />} /> */}
+          {/* <Route path="/cart" exact render={(routerProps) => ( <Cart {...routerProps} cart={this.state.cart} removeFromCart={this.removeFromCart} /> )} /> */}
+        </Container>
+      </Router>
+    );
+  }
 }
 
 export default App;
